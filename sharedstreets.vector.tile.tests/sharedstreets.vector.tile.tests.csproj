@@ -18,4 +18,19 @@
     <ProjectReference Include="..\sharedstreets.vector.tile\sharedstreets.vector.tile.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="testfixtures\12-1171-1566.geometry.6.pbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testfixtures\12-1171-1566.intersection.6.pbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testfixtures\12-1171-1566.metadata.6.pbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="testfixtures\12-1171-1566.reference.6.pbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
