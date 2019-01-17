@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Sharedstreets.Vector.Tile</RootNamespace>
+    <AssemblyName>sharedstreets.vector.tile</AssemblyName>
+  </PropertyGroup>
+
+</Project>
