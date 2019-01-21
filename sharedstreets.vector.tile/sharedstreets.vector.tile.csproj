@@ -8,12 +8,20 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.6.1" />
-    <PackageReference Include="Google.Protobuf.Tools" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="sharedstreets.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>sharedstreets.proto</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <None Update="sharedstreets.proto">
       <Generator>ProtobufGenerator</Generator>
+      <LastGenOutput>sharedstreets.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

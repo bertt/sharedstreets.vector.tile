@@ -19,16 +19,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="testfixtures\12-1171-1566.geometry.6.pbf">
+    <None Update="testfixtures\12-2103-1346.geometry.6.pbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testfixtures\12-1171-1566.intersection.6.pbf">
+    <None Update="testfixtures\12-2103-1346.intersection.6.pbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testfixtures\12-1171-1566.metadata.6.pbf">
+    <None Update="testfixtures\12-2103-1346.metadata.6.pbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="testfixtures\12-1171-1566.reference.6.pbf">
+    <None Update="testfixtures\12-2103-1346.reference.6.pbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
