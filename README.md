@@ -37,8 +37,11 @@ var metadata = SharedStreetsParser.ParseMetadata(metadataStream);
 Assert.IsTrue(metadata.OsmMetadata.WaySections.Count == 8431);
 var reference = SharedStreetsParser.ParseReference(referenceStream);
 Assert.IsTrue(reference.LocationReferences.Count == 17382);
+```
 
 ## Api samples
+
+1] Get by id
 
 Request: https://api.sharedstreets.io/v0.1.0/id/7f1e47e658e554625c51c6fc6cdafcda
 
