@@ -70,3 +70,14 @@ Response:
 ```
 {"matched":{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"referenceId":"b60d4a26865ad09424a4879130600bf2","fromIntersectionId":"e9604c0d8549130e5de39c96565d07b7","toIntersectionId":"39b03988800c0804ed8a4f68c414a854","fromStreetnames":["4th Avenue"],"toStreetnames":["5th Avenue"],"roadClass":"Tertiary","direction":"forward","geometryId":"c9ed74564c19b8b1690edd9d3fa009cf","streetname":"University Street","referenceLength":99.77,"section":[0,99.77],"side":"left","originalFeature":{"type":"Feature","geometry":{"type":"LineString","coordinates":[[-122.33482897844316,47.60832634703897],[-122.33395994272226,47.60869886212237]]},"properties":{}}},"geometry":{"type":"LineString","coordinates":[[-122.3348881,47.6082149],[-122.3347427,47.6082751],[-122.3343875,47.6084223],[-122.33422060000001,47.608491400000005],[-122.3338736,47.6086351],[-122.3337566,47.608683600000006]]}}]},"unmatched":{"type":"FeatureCollection","features":[]},"invalid":{"type":"FeatureCollection","features":[]}}
 ```
+
+3] Match by point
+
+Request: HTTP GET https://api.sharedstreets.io/v0.1.0/match/point/-122.33511865702677,47.6085831295664?auth=<auth_key>&searchRadius=20&maxCandidates=5
+
+Response:
+
+```
+{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"score":6.998255110344653,"location":43.88904156297107,"referenceLength":130.01,"geometryId":"a1966f55f2ca3726da49bb26dc59a587","referenceId":"9625133770057500f04b7f20e3196720","direction":"forward","bearing":328.05149273815516,"snappedSide":"right","interceptAngle":89.99913778176966},"geometry":{"type":"Point","coordinates":[-122.335197867173,47.60854982538368]}}]}
+```
+
