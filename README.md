@@ -37,4 +37,10 @@ var metadata = SharedStreetsParser.ParseMetadata(metadataStream);
 Assert.IsTrue(metadata.OsmMetadata.WaySections.Count == 8431);
 var reference = SharedStreetsParser.ParseReference(referenceStream);
 Assert.IsTrue(reference.LocationReferences.Count == 17382);
+
+## Api samples
+
+Request: https://api.sharedstreets.io/v0.1.0/id/7f1e47e658e554625c51c6fc6cdafcda
+
+Response: {"type":"INT","tiles":["osm/planet-180430/12-2103-1346.intersection.6.pbf","osm/planet-180730/12-2103-1346.intersection.6.pbf","osm/planet-181126/12-2103-1346.intersection.7.pbf","osm/planet-181029/12-2103-1346.intersection.6.pbf","osm/planet-181029/12-2103-1346.intersection.7.pbf","osm/planet-181029/12-2103-1346.intersection.8.pbf","osm/planet-180625/12-2103-1346.intersection.6.pbf","osm/planet-180528/12-2103-1346.intersection.6.pbf","osm/planet-180528/12-2103-1346.intersection.7.pbf","osm/planet-180827/12-2103-1346.intersection.6.pbf","osm/planet-180827/12-2103-1346.intersection.7.pbf","osm/planet-180924/12-2103-1346.intersection.6.pbf","osm/planet-180924/12-2103-1346.intersection.7.pbf","osm/planet-181126/12-2103-1346.intersection.6.pbf"]}
 ```
