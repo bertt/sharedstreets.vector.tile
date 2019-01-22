@@ -29,14 +29,14 @@ var intersectionStream = File.OpenRead(amsterdamTile + "intersection.6.pbf");
 var metadataStream = File.OpenRead(amsterdamTile + "metadata.6.pbf");
 var referenceStream = File.OpenRead(amsterdamTile + "reference.6.pbf");
 
-var geometry = SharedStreetsParser.ParseGeometry(geometryStream);
-Assert.IsTrue(geometry.Lonlats.Count == 50906);
-var intersection = SharedStreetsParser.ParseIntersection(intersectionStream);
-Assert.IsTrue(intersection.Id == "7f1e47e658e554625c51c6fc6cdafcda");
-var metadata = SharedStreetsParser.ParseMetadata(metadataStream);
-Assert.IsTrue(metadata.OsmMetadata.WaySections.Count == 8431);
-var reference = SharedStreetsParser.ParseReference(referenceStream);
-Assert.IsTrue(reference.LocationReferences.Count == 17382);
+var geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
+Assert.IsTrue(geometries.Count == 6202);
+var intersections = SharedStreetsParser.Parse<SharedStreetsIntersection>(intersectionStream);
+Assert.IsTrue(intersections.Count == 4031);
+var metadata = SharedStreetsParser.Parse<SharedStreetsMetadata>(metadataStream);
+Assert.IsTrue(metadata.Count == 6202);
+var references = SharedStreetsParser.Parse<SharedStreetsReference>(referenceStream);
+Assert.IsTrue(references.Count == 8691);
 ```
 
 ## Api samples
