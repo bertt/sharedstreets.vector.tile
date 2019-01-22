@@ -1140,7 +1140,7 @@ public sealed partial class SharedStreetsMetadata : pb::IMessage<SharedStreetsMe
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
         default:
-          // _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
           GeometryId = input.ReadString();
@@ -1419,8 +1419,7 @@ public sealed partial class SharedStreetsGeometry : pb::IMessage<SharedStreetsGe
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
         default:
-                    // had to comment this out otherwise the parsing was not working
-                    // _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
           Id = input.ReadString();
@@ -2000,7 +1999,7 @@ public sealed partial class SharedStreetsReference : pb::IMessage<SharedStreetsR
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
         default:
-          //_unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
           Id = input.ReadString();
@@ -2266,7 +2265,7 @@ public sealed partial class SharedStreetsIntersection : pb::IMessage<SharedStree
     while ((tag = input.ReadTag()) != 0) {
       switch(tag) {
         default:
-          // _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
           Id = input.ReadString();
