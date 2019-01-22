@@ -5,7 +5,7 @@
 
     <IsPackable>false</IsPackable>
 
-    <RootNamespace>SharedStreets.Vector.Tile.Tests</RootNamespace>
+    <RootNamespace>Sharedstreets.Vector.Tile.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

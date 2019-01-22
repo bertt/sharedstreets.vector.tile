@@ -4,10 +4,10 @@ using System.IO;
 
 namespace Tests
 {
-    public class Tests
+    public class PbfParsingTests
     {
         [Test]
-        public void Test1()
+        public void PbfParsingTest()
         {
             // sample amsterdam geometry url: 
             // https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.geometry.6.pbf
