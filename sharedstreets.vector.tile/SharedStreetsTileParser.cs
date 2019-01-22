@@ -1,31 +1,54 @@
-﻿using System.IO;
+﻿using Google.Protobuf;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Sharedstreets.Vector.Tile
 {
     public static class SharedStreetsParser
     {
-        public static SharedStreetsGeometry ParseGeometry(Stream stream)
+        public static List<T> Parse<T>(Stream stream)
         {
-            var sharedStreetsGeometry = SharedStreetsGeometry.Parser.ParseFrom(stream);
-            return sharedStreetsGeometry;
+            var objects = new List<T>();
+            bool cont = true;
+            do
+            {
+                try
+                {
+                    var o = ReadObject<T>(stream);
+                    objects.Add((T)Convert.ChangeType(o, typeof(T)));
+                }
+                // workaround for handling eof https://github.com/protocolbuffers/protobuf/issues/4303
+                catch (InvalidProtocolBufferException)
+                {
+                    cont = false;
+                }
+            }
+            while (cont);
+
+            return objects;
         }
 
-        public static SharedStreetsMetadata ParseMetadata(Stream stream)
+        private static object ReadObject<T>(Stream stream)
         {
-            var sharedStreetsMetadata = SharedStreetsMetadata.Parser.ParseFrom(stream);
-            return sharedStreetsMetadata;
-        }
-
-        public static SharedStreetsIntersection ParseIntersection(Stream stream)
-        {
-            var sharedStreetsIntersection = SharedStreetsIntersection.Parser.ParseFrom(stream);
-            return sharedStreetsIntersection;
-        }
-
-        public static SharedStreetsReference ParseReference(Stream stream)
-        {
-            var sharedStreetsReference= SharedStreetsReference.Parser.ParseFrom(stream);
-            return sharedStreetsReference;
+            object o = null;
+            if (typeof(T).Equals(typeof(SharedStreetsGeometry)))
+            {
+                o = SharedStreetsGeometry.Parser.ParseDelimitedFrom(stream);
+            }
+            else if (typeof(T).Equals(typeof(SharedStreetsIntersection)))
+            {
+                o = SharedStreetsIntersection.Parser.ParseDelimitedFrom(stream);
+            }
+            else if (typeof(T).Equals(typeof(SharedStreetsMetadata)))
+            {
+                o = SharedStreetsMetadata.Parser.ParseDelimitedFrom(stream);
+            }
+            else if (typeof(T).Equals(typeof(SharedStreetsReference)))
+            {
+                o = SharedStreetsReference.Parser.ParseDelimitedFrom(stream);
+            }
+            return o;
         }
     }
 }

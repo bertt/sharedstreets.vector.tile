@@ -19,6 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="testfixtures\11-602-769.geometry.pbf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="testfixtures\12-2103-1346.geometry.6.pbf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
