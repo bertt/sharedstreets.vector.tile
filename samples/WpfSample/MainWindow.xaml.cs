@@ -63,11 +63,13 @@ namespace WpfSample
                 return feature;
             });
 
+            var style = new VectorStyle { Line = new Pen(Color.Red, 4) };
+
             return new MemoryLayer
             {
                 Name = "Lines",
                 DataSource = new MemoryProvider(features),
-                Style = new SymbolStyle { Fill = { Color = new Color(100, 215, 0, 200) }, SymbolScale = 0.9 }
+                Style = style
             };
 
         }
