@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{2664DF1A-77C
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSample", "samples\WpfSample\WpfSample.csproj", "{00BE08BA-8997-40C6-8070-928C3A3A4193}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C8D9CEA4-5565-4E18-8643-B95D207ED5FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,16 @@ Global
 		{91E7FEE8-05BD-4367-973B-AA315343FACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E7FEE8-05BD-4367-973B-AA315343FACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E7FEE8-05BD-4367-973B-AA315343FACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00BE08BA-8997-40C6-8070-928C3A3A4193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00BE08BA-8997-40C6-8070-928C3A3A4193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00BE08BA-8997-40C6-8070-928C3A3A4193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00BE08BA-8997-40C6-8070-928C3A3A4193}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00BE08BA-8997-40C6-8070-928C3A3A4193} = {C8D9CEA4-5565-4E18-8643-B95D207ED5FD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {340A63A4-5B23-4CCA-9BBE-88DAD2F5C742}
