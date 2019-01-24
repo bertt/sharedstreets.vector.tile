@@ -2,6 +2,15 @@
 
 demo viewer: https://platform.sharedstreets.io
 
+## Sample vector tiles
+
+Sample amsterdam:
+
+- Geometry: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.geometry.6.pbf
+- Intersection: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.intersection.6.pbf
+- Metadata: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.metadata.6.pbf
+- Reference: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.reference.6.pbf
+
 ## Sample code
 
 ```
