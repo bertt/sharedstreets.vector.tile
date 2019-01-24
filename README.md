@@ -11,7 +11,7 @@ Sample amsterdam:
 - Metadata: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.metadata.6.pbf
 - Reference: https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.reference.6.pbf
 
-<img src = " screenshot.png"/>
+<img src = "screenshot.png"/>
 
 ## Sample code
 
