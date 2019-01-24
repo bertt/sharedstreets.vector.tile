@@ -1,3 +1,5 @@
+using Google.Protobuf.Collections;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -16,6 +18,30 @@ namespace Sharedstreets.Vector.Tile
                 hash.Append(bytes[i].ToString("x2"));
             }
             return hash.ToString();
+        }
+
+        public static string GeometryId(RepeatedField<double> coords)
+        {
+            var message = GeometryMessage(coords);
+            return GenerateHash(message);
+        }
+
+
+        public static string GeometryMessage(RepeatedField<double> coords)
+        {
+            var c = Round(coords);
+            var result = $"Geometry {string.Join(" ", c)}";
+            return result;
+        }
+
+        public static List<string> Round(RepeatedField<double> values)
+        {
+            var result = new List<string>();
+            foreach(var v in values)
+            {
+                result.Add(v.ToString("F5"));
+            }
+            return result;
         }
     }
 }

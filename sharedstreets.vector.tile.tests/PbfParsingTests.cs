@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using Sharedstreets.Vector.Tile;
 using System.IO;
 
 namespace Sharedstreets.Vector.Tile.Tests
@@ -28,6 +27,10 @@ namespace Sharedstreets.Vector.Tile.Tests
             Assert.IsTrue(metadata.Count == 6202);
             var references = SharedStreetsParser.Parse<SharedStreetsReference>(referenceStream);
             Assert.IsTrue(references.Count == 8691);
+
+            // round test
+            var lonlats = geometries[0].Lonlats;
+            Assert.IsTrue(SharedStreets.GeometryId(lonlats) == geometries[0].Id);
         }
     }
 }
