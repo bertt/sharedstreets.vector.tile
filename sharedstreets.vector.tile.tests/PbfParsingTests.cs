@@ -1,3 +1,4 @@
+using Google.Protobuf;
 using NUnit.Framework;
 using System.IO;
 
@@ -32,5 +33,26 @@ namespace Sharedstreets.Vector.Tile.Tests
             Assert.IsTrue(SharedStreets.GeometryId(lonlats) == geometries[0].Id);
         }
 
+        [Test]
+        public void ProtobufRoundTest()
+        {
+            var amsterdamTile = "./testfixtures/12-2103-1346.";
+            var geometryStream = File.OpenRead(amsterdamTile + "geometry.6.pbf");
+            var geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
+            Assert.IsTrue(geometries.Count == 6202);
+
+            var stream = new MemoryStream();
+            var output = new CodedOutputStream(stream);
+
+            foreach (var g in geometries)
+            {
+                output.WriteMessage(g);
+            }
+            output.Flush();
+            Assert.IsTrue(geometryStream.Length == stream.Length);
+            stream.Position = 0;
+            var newgeometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(stream);
+            Assert.IsTrue(newgeometries.Count == 6202);
+        }
     }
 }

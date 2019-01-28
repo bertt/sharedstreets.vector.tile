@@ -48,6 +48,7 @@ namespace Sharedstreets.Vector.Tile
             {
                 o = SharedStreetsReference.Parser.ParseDelimitedFrom(stream);
             }
+
             return o;
         }
     }
