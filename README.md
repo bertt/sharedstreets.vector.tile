@@ -1,5 +1,7 @@
 # sharedstreets-vector-tile
 
+[![NuGet Status](http://img.shields.io/nuget/v/Bertt.SharedStreets.Vector.Tile.svg?style=flat)](https://www.nuget.org/packages/Bertt.SharedStreets.Vector.Tile/)
+
 .NET Standard 2.0 library for reading/writing SharedStreets tiles.
 
 SharedStreets demo viewer: https://platform.sharedstreets.io/52.37568/4.9058/14.115/
