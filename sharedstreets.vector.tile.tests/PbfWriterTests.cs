@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Sharedstreets.Vector.Tile.Tests
+namespace SharedStreets.Vector.Tile.Tests
 {
     public class PbfWriterTests
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Sharedstreets.Vector.Tile
+namespace SharedStreets.Vector.Tile
 {
     public static class SharedStreets
     {

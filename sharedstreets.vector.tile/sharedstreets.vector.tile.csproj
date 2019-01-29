@@ -2,8 +2,23 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Sharedstreets.Vector.Tile</RootNamespace>
+    <RootNamespace>SharedStreets.Vector.Tile</RootNamespace>
     <AssemblyName>sharedstreets.vector.tile</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <Version>0.1</Version>
+    <Description>.NET Standard 2.0 library for reading/writing SharedStreets tiles.</Description>
+    <Copyright>Bert Temme</Copyright>
+    <PackageLicenseUrl>https://github.com/bertt/sharedstreets.vector.tile/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/bertt/sharedstreets.vector.tile</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bertt/sharedstreets.vector.tile</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>SharedStreets tiles geometry metadata reference intersection</PackageTags>
+    <PackageId>Bertt.SharedStreets.Vector.Tile</PackageId>
+    <Authors>Bert Temme</Authors>
+    <Product>Bertt.SharedStreets.Vector.Tile</Product>
+    <Company />
   </PropertyGroup>
 
   <ItemGroup>

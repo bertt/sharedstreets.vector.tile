@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Sharedstreets.Vector.Tile.Tests
+namespace SharedStreets.Vector.Tile.Tests
 {
     public static class TileReader
     {

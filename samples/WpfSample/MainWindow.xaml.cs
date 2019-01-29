@@ -5,7 +5,7 @@ using Mapsui.Layers;
 using Mapsui.Projection;
 using Mapsui.Providers;
 using Mapsui.Styles;
-using Sharedstreets.Vector.Tile;
+using SharedStreets.Vector.Tile;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

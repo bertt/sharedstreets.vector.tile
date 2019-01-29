@@ -1,7 +1,7 @@
 ﻿using Google.Protobuf.Collections;
 using NUnit.Framework;
 
-namespace Sharedstreets.Vector.Tile.Tests
+namespace SharedStreets.Vector.Tile.Tests
 {
     public class SharedStreetsTests
     {

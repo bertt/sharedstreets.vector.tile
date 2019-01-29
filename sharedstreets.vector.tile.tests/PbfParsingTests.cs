@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using System.IO;
 
-namespace Sharedstreets.Vector.Tile.Tests
+namespace SharedStreets.Vector.Tile.Tests
 {
     public class PbfParsingTests
     {

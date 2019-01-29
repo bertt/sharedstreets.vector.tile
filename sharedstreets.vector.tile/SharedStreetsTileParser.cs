@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Sharedstreets.Vector.Tile
+namespace SharedStreets.Vector.Tile
 {
     public static class SharedStreetsTileParser
     {
