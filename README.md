@@ -1,6 +1,8 @@
 # sharedstreets-vector-tile
 
-demo viewer: https://platform.sharedstreets.io
+.NET Standard 2.0 library for reading/writing SharedStreets tiles.
+
+SharedStreets demo viewer: https://platform.sharedstreets.io
 
 ## Sample vector tiles
 
@@ -24,6 +26,7 @@ var intersectionStream = File.OpenRead(amsterdamTile + "intersection.6.pbf");
 var metadataStream = File.OpenRead(amsterdamTile + "metadata.6.pbf");
 var referenceStream = File.OpenRead(amsterdamTile + "reference.6.pbf");
 
+// reading
 var geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
 Assert.IsTrue(geometries.Count == 6202);
 var intersections = SharedStreetsParser.Parse<SharedStreetsIntersection>(intersectionStream);
@@ -32,6 +35,12 @@ var metadata = SharedStreetsParser.Parse<SharedStreetsMetadata>(metadataStream);
 Assert.IsTrue(metadata.Count == 6202);
 var references = SharedStreetsParser.Parse<SharedStreetsReference>(referenceStream);
 Assert.IsTrue(references.Count == 8691);
+
+// writing
+var streamGeometries = SharedStreetsTileWriter.Write(geometries);
+var streamIntersection = SharedStreetsTileWriter.Write(intersections);
+var streamMetadata = SharedStreetsTileWriter.Write(metadata);
+var referenceMetadata = SharedStreetsTileWriter.Write(reference);
 ```
 
 ## Datamodel

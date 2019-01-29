@@ -46,10 +46,10 @@ namespace WpfSample
             var metadataStream = File.OpenRead(amsterdamTile + "metadata.6.pbf");
             var referenceStream = File.OpenRead(amsterdamTile + "reference.6.pbf");
 
-            geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
-            intersections = SharedStreetsParser.Parse<SharedStreetsIntersection>(intersectionStream);
-            metadata = SharedStreetsParser.Parse<SharedStreetsMetadata>(metadataStream);
-            references = SharedStreetsParser.Parse<SharedStreetsReference>(referenceStream);
+            geometries = SharedStreetsTileParser.Parse<SharedStreetsGeometry>(geometryStream);
+            intersections = SharedStreetsTileParser.Parse<SharedStreetsIntersection>(intersectionStream);
+            metadata = SharedStreetsTileParser.Parse<SharedStreetsMetadata>(metadataStream);
+            references = SharedStreetsTileParser.Parse<SharedStreetsReference>(referenceStream);
         }
 
         private MemoryLayer CreateLineLayer()

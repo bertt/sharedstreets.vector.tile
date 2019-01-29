@@ -1,4 +1,3 @@
-using Google.Protobuf;
 using NUnit.Framework;
 using System.IO;
 
@@ -9,24 +8,18 @@ namespace Sharedstreets.Vector.Tile.Tests
         [Test]
         public void PbfParsingTest()
         {
-            // sample amsterdam geometry url: 
-            // https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.geometry.6.pbf
-            // https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.intersection.6.pbf
-            // https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.metadata.6.pbf
-            // https://tiles.sharedstreets.io/osm/planet-181224/12-2103-1346.reference.6.pbf
-            var amsterdamTile = "./testfixtures/12-2103-1346.";
-            var geometryStream = File.OpenRead(amsterdamTile + "geometry.6.pbf");
-            var intersectionStream = File.OpenRead(amsterdamTile + "intersection.6.pbf");
-            var metadataStream = File.OpenRead(amsterdamTile + "metadata.6.pbf");
-            var referenceStream = File.OpenRead(amsterdamTile + "reference.6.pbf");
+            var geometryStream = TileReader.GetGeometryTile();
+            var intersectionStream = TileReader.GetIntersectionTile();
+            var referenceStream = TileReader.GetReferenceTile();
+            var metadataStream = TileReader.GetMetadataTile();
 
-            var geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
+            var geometries = SharedStreetsTileParser.Parse<SharedStreetsGeometry>(geometryStream);
             Assert.IsTrue(geometries.Count == 6202);
-            var intersections = SharedStreetsParser.Parse<SharedStreetsIntersection>(intersectionStream);
+            var intersections = SharedStreetsTileParser.Parse<SharedStreetsIntersection>(intersectionStream);
             Assert.IsTrue(intersections.Count == 4031);
-            var metadata = SharedStreetsParser.Parse<SharedStreetsMetadata>(metadataStream);
+            var metadata = SharedStreetsTileParser.Parse<SharedStreetsMetadata>(metadataStream);
             Assert.IsTrue(metadata.Count == 6202);
-            var references = SharedStreetsParser.Parse<SharedStreetsReference>(referenceStream);
+            var references = SharedStreetsTileParser.Parse<SharedStreetsReference>(referenceStream);
             Assert.IsTrue(references.Count == 8691);
             // round test
             var lonlats = geometries[0].Lonlats;
@@ -38,20 +31,12 @@ namespace Sharedstreets.Vector.Tile.Tests
         {
             var amsterdamTile = "./testfixtures/12-2103-1346.";
             var geometryStream = File.OpenRead(amsterdamTile + "geometry.6.pbf");
-            var geometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(geometryStream);
+            var geometries = SharedStreetsTileParser.Parse<SharedStreetsGeometry>(geometryStream);
             Assert.IsTrue(geometries.Count == 6202);
-
-            var stream = new MemoryStream();
-            var output = new CodedOutputStream(stream);
-
-            foreach (var g in geometries)
-            {
-                output.WriteMessage(g);
-            }
-            output.Flush();
+            var stream = SharedStreetsTileWriter.Write(geometries);
             Assert.IsTrue(geometryStream.Length == stream.Length);
             stream.Position = 0;
-            var newgeometries = SharedStreetsParser.Parse<SharedStreetsGeometry>(stream);
+            var newgeometries = SharedStreetsTileParser.Parse<SharedStreetsGeometry>(stream);
             Assert.IsTrue(newgeometries.Count == 6202);
         }
     }

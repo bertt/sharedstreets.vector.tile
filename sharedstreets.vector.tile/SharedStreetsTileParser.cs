@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Sharedstreets.Vector.Tile
 {
-    public static class SharedStreetsParser
+    public static class SharedStreetsTileParser
     {
         public static List<T> Parse<T>(Stream stream)
         {
