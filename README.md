@@ -2,7 +2,7 @@
 
 .NET Standard 2.0 library for reading/writing SharedStreets tiles.
 
-SharedStreets demo viewer: https://platform.sharedstreets.io
+SharedStreets demo viewer: https://platform.sharedstreets.io/52.37568/4.9058/14.115/
 
 ## Sample vector tiles
 
