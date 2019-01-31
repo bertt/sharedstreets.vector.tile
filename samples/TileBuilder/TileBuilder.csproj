@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\sharedstreets.vector.tile\sharedstreets.vector.tile.csproj" />
+    <ProjectReference Include="..\..\sharedstreets.vector.tile\sharedstreets.vector.tile.csproj" />
   </ItemGroup>
 
   <ItemGroup>

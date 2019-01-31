@@ -1,4 +1,5 @@
-﻿using OsmSharp.Streams;
+﻿using OsmSharp;
+using OsmSharp.Streams;
 using SharedStreets.Vector.Tile;
 using System;
 using System.IO;
@@ -16,7 +17,7 @@ namespace TileBuilder
             var intersectionStream = File.OpenRead("./data/12-2106-1351.intersection.pbf");
             var intersections = SharedStreetsTileParser.Parse<SharedStreetsIntersection>(intersectionStream);
             // 5099
-            Console.WriteLine("Number of intersections:"+ intersections.Count);
+            Console.WriteLine("Number of intersections:" + intersections.Count);
 
             var tile = new Tile(2106, 1351, 12);
             var bounds = tile.Bounds();
@@ -24,16 +25,31 @@ namespace TileBuilder
             // read osm pbf
             var source = new PBFOsmStreamSource(new FileInfo(osmpbf).OpenRead());
             var filtered = source.FilterBox((float)bounds[0], (float)bounds[3], (float)bounds[2], (float)bounds[1]); // left, top, right, bottom
-
             var i = 0;
-            // todo: filter intersections, geometries
+
+            //grab all way segments for road name A
+            //grab all way segments for road named B
+            //compare both list of nodes
+            //return equal nodes
+
+
+            // filter intersections, geometries
+            // todo: improve perf 
             foreach (var element in filtered)
             {
-                if(element.Type == OsmSharp.OsmGeoType.Node)
+                if (element.Type == OsmGeoType.Way)
                 {
-                    if (element.Tags.ContainsKey("junction"))
+                    var way = (Way)element;
+                    var nodes = way.Nodes;
+                    foreach (var node in nodes)
                     {
-                        i++;
+                        var otherway = GetOtherWay(source, way, node);
+
+                        if (otherway != null)
+                        {
+                            Console.WriteLine(node);
+                            i++;
+                        }
                     }
                 }
             }
@@ -41,6 +57,30 @@ namespace TileBuilder
             //  533926
             Console.WriteLine("Number of nodes: " + i);
             Console.ReadKey();
+        }
+
+        private static Way GetOtherWay(OsmStreamSource source, Way OriginalWay, long searchnode)
+        {
+            foreach (var element in source)
+            {
+                if (element.Type == OsmGeoType.Way)
+                {
+                    var way = (Way)element;
+
+                    if (way.Id != OriginalWay.Id)
+                    {
+                        var nodes = way.Nodes;
+                        foreach (var node in nodes)
+                        {
+                            if (node == searchnode)
+                            {
+                                return way;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }
