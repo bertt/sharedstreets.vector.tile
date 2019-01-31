@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfSample", "samples\WpfSam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{C8D9CEA4-5565-4E18-8643-B95D207ED5FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileBuilder", "TileBuilder\TileBuilder.csproj", "{5F9EC022-D1F3-42C2-843B-BD0BC84B88C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileBuilder", "samples\TileBuilder\TileBuilder.csproj", "{5F9EC022-D1F3-42C2-843B-BD0BC84B88C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
